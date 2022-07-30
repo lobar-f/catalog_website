@@ -1,11 +1,13 @@
 from django.shortcuts import render
-from .models import Product, Category
+from .models import Product, Category, BannerImage
 # Create your views here.
 
 from django.shortcuts import get_object_or_404
 
 def index(request):
-    return render(request, 'index.html', {})
+    banner=BannerImage.objects.all()
+    
+    return render(request, 'index.html', {'banner':banner})
 
 def about_us(request):
     return render(request, 'about-us.html', {})

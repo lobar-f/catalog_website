@@ -5,7 +5,11 @@ from django.urls import reverse
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
 
-
+class BannerImage(models.Model):
+    image = ProcessedImageField(null=True, upload_to="banner/", 
+                                           processors=[ResizeToFill(1500, 1000)],
+                                           format='JPG')
+    
 class Category(models.Model):
     category_name=models.CharField(max_length=255, verbose_name = "название")
     slug = models.SlugField(max_length=255, unique=True, null=True)
@@ -19,6 +23,9 @@ class Category(models.Model):
     class Meta:
         verbose_name = "Категория"
         verbose_name_plural = "Категории"
+
+
+
 YEARS=[('2017', '2017'), 
 ('2018', '2018'),
 ('2019', '2019'),
@@ -38,9 +45,9 @@ class Product(models.Model):
     description = models.CharField(max_length=255, verbose_name = "описание")
     pub_date = models.DateField(default=timezone.now, verbose_name = "дата публикации")
     year=models.CharField(max_length=256, choices=YEARS, default='2022',  verbose_name = "коллекция")
-    image=models.ImageField(upload_to='media/products/%Y/%m/%d')
-    image2=models.ImageField(null=True, upload_to='media/products/%Y/%m/%d')
-    image3=models.ImageField(null=True, upload_to='media/products/%Y/%m/%d')
+    image=models.ImageField(upload_to='products/%Y/%m/%d')
+    image2=models.ImageField(null=True, upload_to='products/%Y/%m/%d')
+    image3=models.ImageField(null=True, upload_to='products/%Y/%m/%d')
     size=models.CharField(max_length=256, choices=[('36', 'S'),('38', 'M'),('40', 'L'), ('42', 'XL')], verbose_name='размер' , default='S')
     #material
     length=models.CharField(max_length=256, choices=[('длинная', 'длинная'), ('короткая', 'короткая'),('средний', 'средний')], default='длинная',  verbose_name = "длина")
@@ -48,7 +55,7 @@ class Product(models.Model):
     #brand
     
     #fason
-    image_thumbnail = ProcessedImageField(null=True, upload_to="media/products/%Y/%m/%d", 
+    image_thumbnail = ProcessedImageField(null=True, upload_to="products/%Y/%m/%d", 
                                            processors=[ResizeToFill(660, 1000)],
                                            format='JPEG')
 
@@ -71,4 +78,4 @@ class ProductImage(models.Model):
  
     def __str__(self):
         return self.product.name
- 
+
