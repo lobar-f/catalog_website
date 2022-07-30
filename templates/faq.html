@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% load static %} 
+
+ {% block content %}
+
+   
+    <div id="main-wrapper"> 
+
+      <div class="rq-page-content">
+        <div class="blog-post-single-wrapper">
+          <div class="single-post-feature-img">
+            <img src="{% static 'assets/dist/img/post-single/questions.jpg' %}" alt="">
+          </div>
+          <div class="container">
+            <div class="rq-content-block">
+              <div class="rq-title-container bredcrumb-title text-center">
+                <h2 class="rq-title">ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</h2>
+                <ol class="breadcrumb rq-subtitle">
+                  <li><a href="/">ГЛАВНАЯ</a></li>
+                  <li class="active">ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</li>
+                </ol>
+              </div>
+              
+		<div class="faq base-padd">
+
+
+		<div class="panel-group rq-accordion" id="accordion11" role="tablist" aria-multiselectable="true">
+		  <div class="panel panel-default">
+		    <div class="panel-heading" role="tab" id="headingOne">
+		      <h4 class="panel-title">
+		        <a role="button" data-toggle="collapse" data-parent="#accordion11" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+		         Какой у Вас адрес?
+		          <i class="fa fa-angle-up pull-right" aria-hidden="true"></i>
+		        </a>
+
+		      </h4>
+		    </div>
+		    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+
+		      <div class="panel-body">
+		        
+Да. Наш адрес: <p>Буюк Ипак Йули 103 дом 69 кв. <br> Ориентир: Мир Подарков </p>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="panel panel-default">
+		    <div class="panel-heading" role="tab" id="headingTwo">
+		      <h4 class="panel-title">
+		        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion11" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+		          Почему так дорого сдаете на прокат, можно сшить за эти деньги?
+		          <i class="fa fa-angle-down pull-right" aria-hidden="true"></i>
+		        </a>
+		      </h4>
+		    </div>
+		    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+		      <div class="panel-body">Да, можете купить за эти деньги материал, добавите плюс еще деньги за шитье портнихе, потратите на примерок уйму времени, а если не получится как вы хотите?! Это первое. 
+		      Второе большинство платьев мы привозим, заказываем с каталогов именно эксклюзивных, стараемся для вас и бывает подгоняем их под вас, чтоб село безупречно! Третье мы очень особенное внимание делаем на химчистку платьев, можете не сомневаясь приходить к нам. <br>	Стоимость проката зависит от стоимости платья в магазинах и стоимости его химчистки. Также при расчете суммы за аренду мы учитываем индивидуальные особенности вечернего платья и сроки его эксплуатации
+		        
+		      </div>
+		    </div>
+		  </div>
+		  <div class="panel panel-default">
+		    <div class="panel-heading" role="tab" id="headingThree">
+		      <h4 class="panel-title">
+		        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion11" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+		         Что делать, если я случайно испачкаю или повредю платье?
+		          <i class="fa fa-angle-down pull-right" aria-hidden="true"></i>
+		        </a>
+		      </h4>
+		    </div>
+		    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+		      <div class="panel-body">
+		       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodsed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+		      </div>
+		    </div>
+		  </div>
+
+			<div class="panel panel-default">
+		    <div class="panel-heading" role="tab" id="headingFour">
+		      <h4 class="panel-title">
+		        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion11" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+		         Где я могу узнать цены?
+		          <i class="fa fa-angle-down pull-right" aria-hidden="true"></i>
+		        </a>
+		      </h4>
+		    </div>
+		    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+		      <div class="panel-body">
+		       Наши цены начинаются от 300 000 сумов. Вы можете связаться с нами по телефону +998712684847, или, что еще лучше, вы можете посетить нас.
+		      </div>
+		    </div>
+		  </div>
+
+		</div><!-- /.accordion -->
+
+</div><!-- /.faq -->
+	</div><!-- /.row -->
+	</div><!-- /.container -->
+</div><!-- /.team -->
+
+{% endblock %}

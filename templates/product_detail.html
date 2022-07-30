@@ -1,0 +1,205 @@
+
+
+
+
+{% extends "base.html" %}
+{% load static %} 
+
+ {% block content %}
+
+
+<div class="container">
+  <ol class="breadcrumb underline"> 
+    <li><a href='/'>ГЛАВНАЯ</a></li>
+    <li><a href="{% url 'products:products' %}">Все платья</a></li>
+    <li>{{product.name}}</li>
+  </ol><!-- /.breadcrumb --> 
+</div><!-- /.container -->  
+ 
+
+<div class="product-details base-padd"> 
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-5 rq-custom-5">
+				<div class="flexslider product_details_slider"> 
+				  <ul class="slides">
+
+				 
+				    <li data-thumb="{{product.image.url }}"><!-- There is a mistake  -->
+				      <img  src="{{product.image.url }}" class="img-responsive" alt="1" />
+				    </li>
+				    
+				    <li data-thumb="{{product.image2.url }}">
+				      <img src="{{product.image.url }}"  alt="1"/>
+				    </li>
+				    <li data-thumb="{{product.image3.url }}">
+				      <img src="{{product.image.url }}"  alt="1"/>
+				    </li>
+				  </ul>
+				  <!-- <a href="#"><img weight="400" height="500" src="{{product.image.url }}" alt="1"></a> -->
+				  
+				</div><!-- /.product_details_slider -->
+			</div><!-- /.col-sm-5 -->
+			<div class="col-sm-7">
+				<div class="rq-inner">
+						
+					<a href="#" class="font-30-for-reg-0">{{product.name}}</a>
+					<hr>
+
+					<h4> <small>Бренд: <span>{{product.brand}}</span></small></h4>
+					<h4> <small>размер: {{product.size}}</small> </h4>	
+<br>
+					<a href="#" class="rating" >
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						
+					</a><!-- /.rating -->
+					<h4 style="font-size: 18px;"> <span> до 70% экономии по сравнению с покупкой </span> </h4>
+					
+					
+						
+					
+
+				
+					
+				
+
+					<div class="row rq-margin">
+						<div class="col-sm-6">
+
+							<a  href="tel:998-71-268-48-47" class="reserve" style="background-color: #691919; padding-bottom: 12px; width: 200px; height: 30px;"><i class="fa fa-phone"> Запись на примерку </i></a>	
+								
+						</div><!-- /.col-sm-6 -->
+						<div class="col-sm-6">
+							<div class="social-icon">
+								<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+								<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+								<a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+								<a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+							</div>	
+						</div><!-- /.col-sm-6 -->
+					</div><!-- /.row -->
+
+					<div class="panel-group rq-accordion" id="accordion" role="tablist" aria-multiselectable="true">
+					  <div class="panel panel-default">
+					    <div class="panel-heading" role="tab" id="headingOne">
+					      <h4 class="panel-title">
+					        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+					          Size and fit
+					          <i class="fa fa-angle-up pull-right" aria-hidden="true"></i>
+					        </a>
+
+					      </h4>
+					    </div>
+					    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+
+					      <div class="panel-body">
+					        Lorem Ipsum is simply dummy text of the printing and type setting industry. Itting industry. Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum is simply dummy text of the printing and type setting industry.
+					      </div>
+					    </div>
+					  </div>
+					  <div class="panel panel-default">
+					    <div class="panel-heading" role="tab" id="headingTwo">
+					      <h4 class="panel-title">
+					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+					          Dsigner notes
+					          <i class="fa fa-angle-down pull-right" aria-hidden="true"></i>
+					        </a>
+					      </h4>
+					    </div>
+					    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+					      <div class="panel-body">
+					        Lorem Ipsum is simply dummy text of the printing and type setting industry. Itting industry. Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum is simply dummy text of the printing and type setting industry.
+					      </div>
+					    </div>
+					  </div>
+					  <div class="panel panel-default">
+					    <div class="panel-heading" role="tab" id="headingThree">
+					      <h4 class="panel-title">
+					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+					          Product details
+					          <i class="fa fa-angle-down pull-right" aria-hidden="true"></i>
+					        </a>
+					      </h4>
+					    </div>
+					    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+					      <div class="panel-body">
+					       Lorem Ipsum is simply dummy text of the printing and type setting industry. Itting industry. Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum is simply dummy text of the printing and type setting industry.
+					      </div>
+					    </div>
+					  </div>
+					</div><!-- /.accordion -->
+
+				</div><!-- /.rq-inner -->
+			</div><!-- /.col-lg-7 -->
+		</div><!-- /.row
+ -->		
+	</div>	<!-- /.container -->
+	<div class="container complete-look">
+		<h4 class="font-30-for-reg-3">Complete the look</h4>
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="inner">
+					<img src="../assets/dist/img/complete-look/1.jpg" alt="">
+					<div class="hover">
+						<a class="font-18-for-reg-1" href="#">Quick View</a>
+					</div><!-- /.hover -->
+				</div><!-- /.inner -->
+			</div><!-- /.col-sm-4 -->
+			<div class="col-sm-4">
+				<div class="inner">
+					<img src="../assets/dist/img/complete-look/2.jpg" alt="">
+					<div class="hover">
+						<a class="font-18-for-reg-1" href="#">Quick View</a>
+					</div><!-- /.hover -->
+				</div><!-- /.inner -->
+			</div><!-- /.col-sm-4 -->
+			<div class="col-sm-4">
+				<div class="inner">
+					<img src="../assets/dist/img/complete-look/3.jpg" alt="">
+					<div class="hover">
+						<a class="font-18-for-reg-1" href="#">Quick View</a>
+					</div><!-- /.hover -->
+				</div><!-- /.inner -->
+			</div><!-- /.col-sm-4 -->
+		</div><!-- /.row -->
+	</div><!-- /.container -->
+</div><!-- /.product-details -->	
+
+
+
+<div class="favorites base-padd">
+<h2>новая коллекция</h2>
+	<div class="container">
+		<div class="owl-favorites owl-carousel owl-theme">
+
+{% for product in products %}
+	    <div class="item">
+	    	<figure> 
+	    		<img src="{{product.image_thumbnail.url}}"  alt="{{product.name}}">
+	    		<a href="{{product.get_absolute_url}}">Aрендовать</a>
+	    	</figure>
+	    	<h3 class="font-20-for-reg-0">{{product.name}}</h3>	
+	    	<p class="font-16-for-reg-0">{{product.description }}</p>
+	    </div>
+	    	{% endfor %}
+	 
+    </div><!-- /.owl-favorites -->
+	</div><!-- /.container -->
+</div><!-- /.favorites -->
+
+
+
+
+
+
+ {% endblock content %}
+
+
+
+
+  
+

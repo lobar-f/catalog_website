@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+{% load static %} 
+
+ {% block content %}
+
+
+
+				
+					
+
+				</div><!-- /.filters -->	
+			</div><!-- /.col-sm-3 -->
+			<div class="col-sm-9">
+				<div class="product-display">
+						
+					<div class="view">
+						<h4  style='padding: 6px; text-align: center;' class="font-25-for-reg-0"><span>Все платья: {{product_count}}</span></h4>
+						
+						
+
+					</div><!-- /.view -->
+					<div class="row">
+						{% for product in products %}
+						<div class="col-sm-6 col-def2">
+							<div class="product-list">
+								<figure>
+									<a href="{{ product.get_absolute_url }}"><img class="img-responsive" src="{{product.image_thumbnail.url}}" alt="grid1" /></a>
+									<figcaption>
+										
+										<a href="#" class="right"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+										<div class="quick-view">
+											<a href="#" data-toggle="modal" data-target="#rqModalOne" data-whatever="@mdo">Quick View</a>
+											<div class="modal fade rq-modal" id="rqModalOne" tabindex="-1" role="dialog" >
+											  <div class="modal-dialog" role="document">
+											    <div class="modal-content">
+											        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><img src="{% static "/assets/dist/img/cross.png" %}" alt=""></button>
+											      <div class="modal-body">
+
+															<div class="list-view">
+																<div class="row">
+																	<div class="col-sm-5"> 
+																		
+																		<div class="modal-carousel owl-carousel owl-theme">
+
+																	    <div class="item">
+																	    	<figure><img class="img-responsive" src="{{product.image.url}}" alt="list"></figure>
+																	    </div>
+																	    <div class="item">
+																	    	<figure><img class="img-responsive" src="{{product.image.url}}" alt="list"></figure>
+																	    </div>
+																	    <div class="item">
+																	    	<figure><img class="img-responsive" src="{{product.image.url}}" alt="list"></figure>
+																	    </div>
+																    </div><!-- /.modal-carousel -->
+																	</div>
+
+																	<div class="col-sm-7">
+
+																		<div class="product-info">
+																			<h4 class="font-20-for-reg-0">{{product.name}}</h4>
+																			<h4 class="font-16-for-reg-0">Brand : <span>{{product.brand}}</span></h4>
+																			<h5 class="font-16-for-reg-0">Razmer: {{product.size}}</h5>
+																			<p class="font-16-for-reg-0">{{product.description}} </p>
+
+																			<div class="delivery-date">
+																				<div id="houston-component-11"></div>
+																			</div><!-- /.delivery-date -->
+
+																			<div class="btn-group">
+																				
+																			
+																			</div><!-- /.btn-group -->
+																			<button class="shopping-bag">Add to Shopping Bag <i class="fa fa-shopping-bag" aria-hidden="true"></i></button>
+																			<div class="remove">
+																				<a href="#" class="left rq-custom"><i class="fa fa-gift active"></i> Remove Wishlist</a>
+																				<a href="#"><i class="fa fa-heart-o active"></i> Remove favorite</a>
+																			</div><!-- /.remove -->
+																		</div><!-- /.product-info -->
+																	</div>
+																</div><!-- /.row -->
+															</div><!-- /.list-view -->
+
+											      </div>
+											    </div><!-- /.modal-content -->
+											  </div><!-- /.modal-dialog -->
+											</div><!-- /.modal -->
+										</div>
+									</figcaption>
+								</figure>
+								<div class="description">
+									<a href="{{ product.get_absolute_url }}" class="font-18-for-reg-0">{{product.name}}</a>
+									
+									<h5><span style="color: gray; font-size:12px; " >размер: {{product.size}} </span></h5>
+								</div><!-- /.description -->	
+							</div><!-- /.product-list -->
+						</div><!-- /.col-sm-4 -->
+						
+						{% endfor %}
+						
+						
+
+
+					</div><!-- /.row -->
+				</div><!-- /.product-display -->
+				<div class="row mrg-top">
+					
+					<div class="col-xs-8">
+						<nav>
+						  
+						  	 {% block pagin %}
+						        	{% include "pagination.html" with page=page_obj %}
+								{% endblock %}
+					
+						</nav>
+					</div>
+				</div><!-- /.row -->
+			</div><!-- /.col-sm-9 -->
+		</div><!-- /.row -->
+	</div><!-- /.container -->
+</div><!-- /.filter-list -->
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+<div id="go-to-top">
+	<a href="#stickynav"><i class="fa fa-angle-up"></i></a>
+</div> 
+
+  {% endblock %}
