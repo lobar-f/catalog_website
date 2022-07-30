@@ -7,15 +7,17 @@
 <div class="banner">
 	
 	<div class="owl-carousel owl-theme dr-main-slider">
+		{% for b in banner %}
     <div class="item">  
-    	<img src="{% static 'assets/dist/img/banner/1.jpg' %}"  alt="" class="img-responsive">
+    	<img src="{{ b.image.url }}"  alt="" class="img-responsive">
     	<div class="text2">
     		<h2>Новая коллекция </h2> 
     		<p>ПРОКАТ ЭКСЛЮЗИВНЫХ ПЛАТЬЕВ</p>
     		<a  href="{% url 'products:products' %}" >Посмотреть каталог</a>
     	</div><!-- /.text -->
     
-    	</div><!-- /.text2 --> 
+    	</div><!-- /.text2 -->
+    	{% endfor %} 
     	<div class="item">
     	<img src="{% static 'assets/dist/img/banner/2.jpg' %}"  alt="" class="img-responsive">
     	<div class="text">

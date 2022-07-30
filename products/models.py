@@ -7,8 +7,16 @@ from imagekit.processors import ResizeToFill
 
 class BannerImage(models.Model):
     image = ProcessedImageField(null=True, upload_to="banner/", 
-                                           processors=[ResizeToFill(1500, 1000)],
-                                           format='JPG')
+                                           processors=[ResizeToFill(1500, 800)],
+                                           format='JPEG')
+    class Meta:
+        verbose_name = "Изображение баннера"
+        verbose_name_plural = "Изображения баннеров"
+class Size(models.Model):
+    size = models.CharField(max_length=4, default='S')
+    class Meta:
+        verbose_name = "размер"
+
     
 class Category(models.Model):
     category_name=models.CharField(max_length=255, verbose_name = "название")
@@ -45,10 +53,10 @@ class Product(models.Model):
     description = models.CharField(max_length=255, verbose_name = "описание")
     pub_date = models.DateField(default=timezone.now, verbose_name = "дата публикации")
     year=models.CharField(max_length=256, choices=YEARS, default='2022',  verbose_name = "коллекция")
-    image=models.ImageField(upload_to='products/%Y/%m/%d')
+    image = models.ImageField(upload_to='products/%Y/%m/%d',blank=True)    
     image2=models.ImageField(null=True, upload_to='products/%Y/%m/%d')
     image3=models.ImageField(null=True, upload_to='products/%Y/%m/%d')
-    size=models.CharField(max_length=256, choices=[('36', 'S'),('38', 'M'),('40', 'L'), ('42', 'XL')], verbose_name='размер' , default='S')
+    size=models.ManyToManyField(Size)
     #material
     length=models.CharField(max_length=256, choices=[('длинная', 'длинная'), ('короткая', 'короткая'),('средний', 'средний')], default='длинная',  verbose_name = "длина")
     length_hand=models.CharField(max_length=256, choices=[('длинная', 'длинная'), ('короткая', 'короткая'),('средний', 'средний'),('нет', 'нет')], default='короткая',  verbose_name = "длина рукава")
